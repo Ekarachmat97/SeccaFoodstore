@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <h1>HELLO SELAMAT DATANG DI HALAMAN ADMIN</h1>
+    <button id="logout-button" value="ok">Logout</button>
+
+    <!-- <script type="module" src="firebaseconfig.js"></script> -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC-Wx1ra2Sqc5RPZ89dRVteQMtpN7yY0pI",
+    authDomain: "seccagame-31424.firebaseapp.com",
+    databaseURL: "https://seccagame-31424-default-rtdb.firebaseio.com",
+    projectId: "seccagame-31424",
+    storageBucket: "seccagame-31424.appspot.com",
+    messagingSenderId: "889662398603",
+    appId: "1:889662398603:web:5e36dcdf418172d45fb48e",
+    measurementId: "G-4YWHLXQYEE"
+  };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      let logoutButton = document.getElementById("logout-button");
+      console.log(logoutButton);
+
+      logoutButton.addEventListener("click", (e) => {
+        const auth = getAuth(app);
+        signOut(auth)
+          .then(() => {
+            alert("sukses logout");
+            location.href = "Login-firebase/login.html";
+          })
+          .catch((error) => {});
+      });
+    </script>
+  </body>
+</html>

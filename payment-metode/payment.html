@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="payment.css" />
+    <title>Halaman Pembayaran</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      h2 {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      textarea {
+        width: 90%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+
+      button.confirm-purchase-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: block;
+        margin: 0 auto; /* Untuk membuat tombol berada di tengah halaman */
+      }
+
+      button.confirm-purchase-btn:hover {
+        background-color: #45a049;
+      }
+
+      #formPelanggan,
+      #map {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PRODUK YANG KAMU BELI</h1>
+    <div class="cart-items">
+      <!-- Produk yang akan ditampilkan akan ditambahkan di sini -->
+    </div>
+    <b class="total"><span id="total-price"></span></b>
+
+    <h1>Metode Pengiriman:</h1>
+    <label for="kurir">Kirim lewat kurir:</label>
+    <input
+      type="radio"
+      id="kurir"
+      name="metode_pengiriman"
+      onclick="showForm()"
+    />
+    <br />
+    <label for="toko">Kunjungi toko:</label>
+    <input
+      type="radio"
+      id="toko"
+      name="metode_pengiriman"
+      onclick="showMap()"
+    />
+
+    <div id="formPelanggan">
+      <h1>Form Informasi Pelanggan:</h1>
+      <form>
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required /><br />
+
+        <label for="alamat">Alamat Lengkap:</label>
+        <textarea id="alamat" name="alamat" required></textarea><br />
+
+        <label for="nomor_hp">Nomor HP:</label>
+        <input type="tel" id="nomor_hp" name="nomor_hp" required /><br />
+
+        <p>Biaya Pengiriman: Rp. 7000 (untuk area Cicalengka)</p>
+        <p>Nomor Dana Admin: 089691213179</p>
+        <div class="bukti_pembayaran" style="display: none">
+          <label for="bukti_pembayaran">Upload Bukti Pembayaran:</label>
+          <input
+            type="file"
+            id="bukti_pembayaran"
+            name="bukti_pembayaran"
+            accept="image/*"
+            required
+          /><br />
+        </div>
+
+        <div class="purchase-container">
+          <button class="confirm-purchase-btn">Konfirmasi Pembelian</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="map">
+      <h2>Alamat Lokasi Toko:</h2>
+      <p>Jln. Raya Cicalengka - Majalaya No. 201</p>
+      <!-- Masukkan kode Google Maps di sini -->
+      <button class="confirm-purchase-btn">Konfirmasi Pembelian</button>
+    </div>
+
+    <script src="payment.js"></script>
+  </body>
+</html>

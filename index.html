@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONS -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+
+    <!-- MYSTYLE -->
+    <link rel="stylesheet" href="style.css">
+    <title>Secca Food</title>
+</head>
+<body>
+  <header id="top">
+    <div class="navbar" data-header>
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()"><i data-feather="menu"></i>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="search-bar" >
+            <input type="text" id="searchInput" placeholder="Cari...">
+        </div>
+        <div class="cart-icon" id=" shopping-cart-button" onclick="toggleCart()">
+<i data-feather="shopping-cart"></i><span class="cart-count">0</span>
+        </div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li class="active"><a href="#products"><i data-feather="home"></i></a></li>
+            <li>
+                <a href="#contact"><i data-feather="phone"></i></a>
+            </li>
+
+            <li><a href="#about"><i data-feather="info"></i></a></li>
+            
+            <li>
+              <a href="Login-firebase/Login.html"><i data-feather="user"></i></a>
+              </li>
+              <div class="setting-icon">
+            <li>
+              <div class="user-icon" onclick="togglesettings()"><i data-feather="settings"></i></div>
+              </li>
+              </div>
+        </ul>
+    </div>
+</header>
+  
+  
+ <div class="list-menu">
+      <ul>
+        <li class="menuBar">
+          <a href="#top" class="food"><i class="ph-bold ph-hamburger"></i></a>
+          <a href="#drinks" class="drink"><i class="ph-bold ph-coffee"></i></a>
+        </li>
+      </ul>
+</div> 
+
+
+<main>
+  <!-- PRODUCTS FOOD-->
+  <div class="carousel-container">
+    <h1 class="daftar-menu">DAFTAR MENU <br>FOOD</br></h1>
+      <div class="carousel">
+        <section class="products" id="products">
+      <!-- PRODUCT DI TAMPILAN JS -->
+        </section>
+      </div>
+  </div>
+</main>
+
+  <!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+    <button class="close-btn" onclick="closeCart()">
+      <i class="ph ph-x-circle"></i>
+    </button>
+    <!-- Isi cart sidebar di sini -->
+    <div class="cart-items">
+        <h3>KERANJANG BELANJA</h3>
+        <ul class="cart-items">
+            <!-- Cart items go here -->
+        </ul>
+
+    </div>
+      <div class="total">
+            <p class="cart-total">Total: Rp.<span id="cart-total">0</span></p>
+<button class="checkout-btn" id="go-to-payment" onclick="checkout()">Checkout</button>
+
+  </div>
+</div>
+
+<!-- CARD-CONTACT-->
+<section class="Contact" id="contact">
+  <h1>KONTAK KAMI</h1>
+    <div class="contact-card">
+    <div class="contact-icon">
+            <i data-feather="globe"></i>
+        </div>
+    <div class="contact-info">
+            <h3>www.seccafood.com</h3>
+        </div>
+    </div>
+    <div class="contact-card">
+    <div class="contact-icon">
+            <i data-feather="instagram"></i>
+        </div>
+    <div class="contact-info">
+            <h3>@seccafood</h3>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-icon">
+            <i data-feather="facebook"></i>
+        </div>
+        <div class="contact-info">
+            <h3>seccafood</h3>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-icon">
+            <i data-feather="mail"></i>
+        </div>
+        <div class="contact-info">
+            <h3>info@seccafood.com</h3>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-icon">
+            <i data-feather="message-circle"></i>
+        </div>
+        <div class="contact-info">
+            <h3>+6289691213179</h3>
+        </div>
+    </div>
+</section>
+<!-- TENTANG KAMI -->
+<section class="about" id="about">
+    <div class="about-content">
+        <h2>Tentang Kami</h2>
+        <p>Secca Food adalah sebuah usaha makanan yang berkomitmen untuk menyajikan makanan berkualitas tinggi dengan rasa yang lezat. Kami percaya bahwa makanan adalah cara terbaik untuk menghubungkan orang dan menciptakan kenangan yang tak terlupakan. Dengan berbagai pilihan menu yang lezat, kami berharap dapat memuaskan selera Anda dan menjadi bagian dari momen spesial Anda.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 Secca Food. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+    <a
+      href="#top"
+      class="back-top-btn"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="caret-up"></ion-icon>
+    </a>
+
+
+<!-- MYSCRIPT -->
+  <script src="main.js"></script>
+<!-- feather-icons -->
+  <script>
+      feather.replace();
+    </script>
+<!-- ionicon link -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+</body>
+</html>
